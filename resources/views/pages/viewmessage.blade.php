@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-s
+
 <form class="form-horizontal" action='' method="POST">
     <div class="container">
         <div class="row">

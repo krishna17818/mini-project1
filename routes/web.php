@@ -11,28 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/signup', function () {
-    return view('signup');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/card', function () {
-    return view('card');
-});
-Route::get('/viewmessage', function () {
-    return view('viewmessage');
-});
-Route::get('/logout', function () {
-    return view('logout');
-});
+Route::get('/', 'PagesController@index')->name('index');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/signup', 'PagesController@signup')->name('signup');
+Route::get('/login', 'PagesController@login')->name('login');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/viewmessage','PagesController@viewmessage')->name('viewmessage');
+Route::get('/card','PagesController@card')->name('card');
+Route::post('/contact','PagesController@store')->name('contact.store');
+Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');
+/* Route::post('/contact', function () {
+   $data = request() ->all();
 
+   echo "Email: " . $data['email'] . '<br>';
+   echo "Body:  " . $data['body'];
+}); */
